@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MauñAl - Tu asesora en estilo de uñas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-principal: #D16BA5;
+      --color-secundario: #6A8EAE;
+      --color-acento: #F2C94C;
+      --color-fondo: #F9F5F6;
+      --color-oscuro: #2E2E2E;
+      --borde-radio: 16px;
+      --sombra-suave: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Urbanist', sans-serif;
+      background-color: var(--color-fondo);
+      color: var(--color-oscuro);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+      border-bottom-left-radius: var(--borde-radio);
+      border-bottom-right-radius: var(--borde-radio);
+      box-shadow: var(--sombra-suave);
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      background: url('https://images.unsplash.com/photo-1615939068960-7b73f05f92cb?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      opacity: 0.1;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+    }
+
+    header h1, header p, .cta-button {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      animation: fadeDown 1s ease-out;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      animation: fadeUp 1s ease-out;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .cta-button {
+      background-color: var(--color-acento);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 2rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e1b63d;
+      transform: translateY(-3px);
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--color-principal);
+    }
+
+    .section p, .section ul {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .section ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    .section ul li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .section ul li::before {
+      content: '💅';
+      position: absolute;
+      left: 0;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: var(--borde-radio);
+      box-shadow: var(--sombra-suave);
+      padding: 2rem;
+      margin-top: 2rem;
+      animation: fadeUp 1.4s ease;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .gallery img {
+      border-radius: var(--borde-radio);
+      width: 280px;
+      height: 180px;
+      object-fit: cover;
+      box-shadow: var(--sombra-suave);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: var(--color-oscuro);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MauñAl</h1>
+    <p>Tu asesora inteligente para un estilo de uñas perfecto</p>
+    <button class="cta-button">Explorar Diseños</button>
+  </header>
+
+  <section class="section">
+    <h2>¿Qué es MauñAl?</h2>
+    <p>MauñAl es una app y sitio web impulsado por inteligencia artificial que te ayuda a encontrar el diseño de manicure ideal según tus gustos, estilo y ocasión. Además, conecta a clientes con manicuristas calificados cerca de ellos.</p>
+  </section>
+
+  <section class="section card">
+    <h2>Beneficios</h2>
+    <ul>
+      <li><strong>IA personalizada:</strong> Diseños únicos según tus preferencias.</li>
+      <li><strong>Red de profesionales:</strong> Encuentra y califica manicuristas.</li>
+      <li><strong>Reservas fáciles:</strong> Programa tu cita desde la app.</li>
+      <li><strong>Impulsa tu negocio:</strong> Para manicuristas que quieren crecer.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Galería de Diseños</h2>
+    <div class="gallery">
+      <img src="maxresdefault.jpg" alt="Diseño 1">
+      <img src="OIP.jpeg" alt="Diseño 2">
+      <img src="set-de-manicura-scaled.jpg" alt="Diseño 3">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Planes de afiliación</h2>
+    <p>Elige entre una cuota fija mensual o pagar un porcentaje de tus ingresos. MauñAl se adapta a ti para ayudarte a crecer sin presiones.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MauñAl. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
